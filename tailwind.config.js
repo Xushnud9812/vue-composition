@@ -5,6 +5,10 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '20px'
+    },
     extend: {
       colors: {
         primary: '#FF8F5E'
