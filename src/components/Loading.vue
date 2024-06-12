@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center my-20">
+  <div class="flex justify-center">
     <span class="loader"></span>
   </div>
 </template>

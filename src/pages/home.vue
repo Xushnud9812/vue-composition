@@ -4,14 +4,32 @@
 
       <h1 class="mb-10">Home page</h1>
 
-      <OurProjects />
+      <Example>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero natus adipisci rem.</p>
+      </Example>
+
+
+      <Example>
+
+        <template v-slot:first>
+          <div class="flex gap-5">
+
+            <button v-if="3 > 5" class="bg-red-500 p-5">button 1</button>
+            <button v-if="3 < 5" class="bg-red-500 p-5">button 2</button>
+            <button v-else>ads</button>
+            <button v-show="3 > 5" class="bg-red-500 p-5">button 3</button>
+            <button v-show="3 < 5" class="bg-red-500 p-5">button 4</button>
+          </div>
+        </template>
+      </Example>
+
     </div>
   </div>
 </template>
 
 <script setup>
-import Navbar from '../components/Navbar.vue';
-import OurProjects from '../components/OurProjects.vue';
+import Example from '../components/Example.vue';
+
 
 
 </script>
