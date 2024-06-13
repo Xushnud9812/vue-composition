@@ -2,7 +2,12 @@
   <div class="my-10">
     <div class="container">
 
-      <h1 class="text-3xl mb-5">Products</h1>
+      <h1 class="text-3xl mb-5">Products
+
+        <span>
+          <Icon class="text-black" icon="mdi:home" />
+        </span>
+      </h1>
       <input v-model="searchText" placeholder="search..."
         class="w-full my-5 py-3 px-5 border border-gray-800 rounded outline-none focus:border-primary" type="text">
       <Loading v-if="loading" />
@@ -25,6 +30,7 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
 import { reactive, ref, watch } from 'vue'
 const products = ref([])
 import api from '@/api'

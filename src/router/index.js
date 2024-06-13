@@ -55,6 +55,16 @@ const router = createRouter({
           component: () => import('@/pages/posts.vue')
         },
         {
+          path: '/composable',
+          name: 'composable',
+          component: () => import('@/pages/composable.vue')
+        },
+        {
+          path: '/directives',
+          name: 'directives',
+          component: () => import('@/pages/directives.vue')
+        },
+        {
           path: '/products/:id',
           name: 'product-detail',
           component: () => import('@/pages/product-details.vue')
