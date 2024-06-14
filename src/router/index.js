@@ -45,6 +45,16 @@ const router = createRouter({
           component: () => import('@/pages/about.vue')
         },
         {
+          path: '/vuex',
+          name: 'vuex',
+          component: () => import('@/pages/vuex.vue')
+        },
+        {
+          path: '/favorites',
+          name: 'favorites',
+          component: () => import('@/pages/favorites.vue')
+        },
+        {
           path: '/products',
           name: 'products',
           component: () => import('@/pages/products.vue')
