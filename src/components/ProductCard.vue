@@ -3,12 +3,12 @@
 
     <div class="bg-gray-200 rounded p-5 relative">
 
-      <button @click="toggleLike" class="absolute top-5 right-5">
+      <button @click="toogleLikeProduct(product)" class="absolute top-5 right-5">
         {{ isLiked ? '❤' : '🤍' }}
       </button>
 
       <img :src="product.thumbnail" alt="">
-
+      <button @click="handleClick">button</button>
       <h1 class="text-2xl font-medium line-clamp-1 my-3"> {{ product.title }}</h1>
       <p class="line-clamp-2 mb-3">{{ product.description }}</p>
       <h1 class="text-2xl font-medium"> {{ product.price }} $</h1>
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   props: {
     product: Object
@@ -33,9 +34,13 @@ export default {
   },
 
   methods: {
-    toggleLike() {
-      this.$store.commit('toogleLikeProduct', this.product)
-    }
+    handleClick() {
+      this.$emit('handle')
+    },
+    ...mapMutations(['toogleLikeProduct']),
+    // toggleLike() {
+    //   this.$store.commit('toogleLikeProduct', this.product)
+    // }
   }
 
 

@@ -2,6 +2,8 @@
   <div class="container">
     <h1 class="text-3xl text-center font-bold my-5">Vuex</h1>
 
+    {{ count }}
+
     <div class="grid grid-cols-4 gap-5">
       <ProductCard v-for="product in products" :key="product.id" :product="product" />
     </div>
@@ -12,6 +14,8 @@
 <script>
 import ProductCard from '../components/ProductCard.vue'
 import axios from 'axios'
+import { mapState } from 'vuex'
+
 export default {
   data() {
     return {
@@ -19,11 +23,7 @@ export default {
     }
   },
   components: { ProductCard },
-  computed: {
-    count() {
-      return this.$store.state.count
-    }
-  },
+  computed: mapState(['count']),
   created() {
     this.fetchProducts()
   },
