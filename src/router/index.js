@@ -80,9 +80,24 @@ const router = createRouter({
           component: () => import('@/pages/transition.vue')
         },
         {
+          path: '/pinia',
+          name: 'pinia',
+          component: () => import('@/pages/pinia.vue')
+        },
+        {
           path: '/products/:id',
           name: 'product-detail',
           component: () => import('@/pages/product-details.vue')
+        },
+        {
+          path: '/quizz/:id',
+          name: 'quizz-detail',
+          component: () => import('@/pages/quizz-detail.vue')
+        },
+        {
+          path: '/create-quizz',
+          name: 'quizz',
+          component: () => import('@/pages/create-quizz.vue')
         },
       ]
     },
