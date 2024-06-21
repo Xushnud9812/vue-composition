@@ -2,7 +2,9 @@
   <div class="py-10">
     <div class="container">
 
-      <h1 class="mb-10">Home page</h1>
+      <h1 class="mb-10" v-tooltip="'salom'">Home page</h1>
+
+      <Loading />
 
       <Example>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero natus adipisci rem.</p>

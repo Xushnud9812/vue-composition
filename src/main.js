@@ -4,52 +4,22 @@ import App from './App.vue'
 
 import router from './router'
 import store from './store'
+import Vue3Toasity from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
 
-import { Icon } from '@iconify/vue';
+import { createI18n } from 'vue-i18n'
+
+import firstPlugin from '@/plugins/firstPlugin'
+
+import i18n from './plugins/i18n'
 
 const app = createApp(App)
 
 
-app.directive('focus', {
-  mounted(el) {
-    el.focus()
-  }
-});
 
-app.directive('color', {
-  mounted(el, binding) {
-    el.style.color = binding.value
-    console.log('element', el);
-    console.log('binding', binding);
-  }
-})
-
-
-app.directive('tooltip', {
-  mounted(el, binding) {
-    const div = document.createElement('div')
-    div.innerText = binding.value
-    div.style.position = 'absolute'
-    el.style.position = 'relative'
-    div.style.top = '-20px'
-    div.style.backgroundColor = 'black'
-    div.style.color = 'white'
-    div.style.display = 'none'
-    el.appendChild(div)
-    el.onmouseenter = function () {
-      div.style.display = 'block'
-    }
-    el.onmouseleave = function () {
-      div.style.display = 'none'
-    }
-
-  }
-})
-
-
-
-
-app.component(Icon)
 app.use(router)
+app.use(Vue3Toasity)
+app.use(i18n)
+app.use(firstPlugin)
 app.use(store)
 app.mount('#app')

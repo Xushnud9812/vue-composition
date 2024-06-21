@@ -75,6 +75,11 @@ const router = createRouter({
           component: () => import('@/pages/directives.vue')
         },
         {
+          path: '/transition',
+          name: 'transition',
+          component: () => import('@/pages/transition.vue')
+        },
+        {
           path: '/products/:id',
           name: 'product-detail',
           component: () => import('@/pages/product-details.vue')
